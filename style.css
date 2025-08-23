@@ -158,7 +158,7 @@ main {
 }
 
 .player--winner {
-  background-color: black;
+  background-color: dark greenyellow;
 }
 
 .player--winner .name {
