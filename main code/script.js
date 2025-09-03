@@ -11,6 +11,9 @@ const btnNew = document.querySelector('.btn--new');
 const btnRoll = document.querySelector('.btn--roll');
 const btnHold = document.querySelector('.btn--hold');
 
+const player0El = document.querySelector('.player--0');
+const player1El = document.querySelector('.player--1');
+
 score1.textContent = 0;
 score0.textContent = 0;
 
@@ -26,7 +29,7 @@ let activePlayer = 0;
 btnRoll.addEventListener('click', function() {
     // 1. Generate Random no.
     const dice = Math.trunc(Math.random() * 6) + 1;
-    console.log(dice);
+    //console.log(dice);
 
 
     // 2. Display dice no.
@@ -39,7 +42,12 @@ btnRoll.addEventListener('click', function() {
         document.querySelector(`#current--${activePlayer}`).textContent = currScore;
     }
     else {
+        document.querySelector(`#current--${activePlayer}`).textContent = 0;
         activePlayer = activePlayer === 0 ? 1 : 0;
+        currScore = 0;
+        player0El.classList.toggle('player--active');
+        player1El.classList.toggle('player--active');
+
 
 
     }
